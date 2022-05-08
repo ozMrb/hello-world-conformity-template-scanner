@@ -12,7 +12,7 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v2
           - name: Cloud One Conformity Pipeline Scanner
-            uses: raphabot/conformity-template-scanner-pipeline@1.0.0
+            uses: raphabot/conformity-template-scanner-pipeline@v1.0.0
             env:
               cc_apikey: ${{ secrets.apikey }}
               maxExtreme: 0
