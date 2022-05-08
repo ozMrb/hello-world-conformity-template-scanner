@@ -1,0 +1,25 @@
+name: Cloud Confirmity Template Scanner Pipeline
+
+on: 
+  push:
+    branches: 
+      - main
+      
+jobs:      
+    CloudFormation-Scan:
+       runs-on: ubuntu-latest
+       steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Cloud One Conformity Pipeline Scanner
+            uses: raphabot/conformity-template-scanner-pipeline@1.0.0
+            env:
+              cc_apikey: ${{ secrets.apikey }}
+              maxExtreme: 0
+              maxVeryHigh: 1
+              maxHigh: 3
+              maxMedium: 5
+              maxLow: 10
+              cc_region: ap-southeast-2
+              templatePath: template.yaml
+              cc_output_results: true
