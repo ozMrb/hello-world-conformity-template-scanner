@@ -21,5 +21,5 @@ jobs:
               maxMedium: 5
               maxLow: 10
               cc_region: ap-southeast-2
-              templatePath: template.yaml
+              templatePath: template.yml
               cc_output_results: true
